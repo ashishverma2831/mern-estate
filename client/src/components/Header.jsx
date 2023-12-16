@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+// import { useSelector } from 'react-redux';
+// import { useEffect, useState } from 'react';
 
 const Header = () => {
   return (
@@ -15,15 +15,12 @@ const Header = () => {
           </h1>
         </Link>
         <form
-          onSubmit={handleSubmit}
           className='bg-slate-100 p-3 rounded-lg flex items-center'
         >
           <input
             type='text'
             placeholder='Search...'
             className='bg-transparent focus:outline-none w-24 sm:w-64'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
             <FaSearch className='text-slate-600' />
@@ -40,7 +37,7 @@ const Header = () => {
               About
             </li>
           </Link>
-          <Link to='/profile'>
+          {/* <Link to='/profile'>
             {currentUser ? (
               <img
                 className='rounded-full h-7 w-7 object-cover'
@@ -50,7 +47,7 @@ const Header = () => {
             ) : (
               <li className=' text-slate-700 hover:underline'> Sign in</li>
             )}
-          </Link>
+          </Link> */}
         </ul>
       </div>
     </header>
