@@ -1,5 +1,15 @@
 const express = require('express');
-// import express from
+const mongoose = require('mongoose')
+const dotenv = require('dotenv');
+
+dotenv.config();
+// require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch((err) => console.log(err));
+
+
 const app = express();
 
 app.listen(3000,()=>{
