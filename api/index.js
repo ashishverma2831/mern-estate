@@ -5,7 +5,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 // require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb+srv://root:root@mern-estate.byjriil.mongodb.net/mern-estate?retryWrites=true&w=majority')
+// mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("MongoDB Connected"))
 .catch((err) => console.log(err));
 
