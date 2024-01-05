@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv');
+const userRouter = require('./routes/user.route.js')
 
 dotenv.config();
 // require('dotenv').config();
@@ -16,6 +17,12 @@ const app = express();
 app.listen(3000,()=>{
     console.log("Server is running at http://localhost:3000");
 })
-app.get('/',(req,res)=>{
-    res.send('server express')
-})
+// app.get('/test',(req,res)=>{
+//     res.send('server express')
+// })
+// app.get('/test',(req,res)=>{
+//     res.json({
+//         message:'Hello express'
+//     })
+// })
+app.use('/api/user',userRouter)
