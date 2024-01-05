@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose')
 const dotenv = require('dotenv');
 const userRouter = require('./routes/user.route.js')
+const authRouter = require('./routes/auth.route.js')
 
 dotenv.config();
 // require('dotenv').config();
@@ -13,6 +14,7 @@ mongoose.connect('mongodb+srv://root:root@mern-estate.byjriil.mongodb.net/mern-e
 
 
 const app = express();
+app.use(express.json())
 
 app.listen(3000,()=>{
     console.log("Server is running at http://localhost:3000");
@@ -26,3 +28,4 @@ app.listen(3000,()=>{
 //     })
 // })
 app.use('/api/user',userRouter)
+app.use('/api/auth',authRouter)
